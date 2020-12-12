@@ -15,14 +15,14 @@ public class HerokuController {
     @ResponseStatus(HttpStatus.OK)
     public String getOperation() {
         log.info("Calling Get Operation");
-        return "Hello World, this is a get operation";
+        return "Siempre serás para mi la más hermosa del mundo mundial";
     }
 
     @PostMapping(value = "/post")
     @ResponseStatus(HttpStatus.OK)
     public String postOperation() {
         log.info("Calling Post Operation");
-        return "Hello world, this is a post operation";
-
+        return "Te amo mucho Angie :3";
     }
+
 }
