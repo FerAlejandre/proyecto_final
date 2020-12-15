@@ -2,6 +2,8 @@ package com.finalproject.resume.controller;
 
 import com.finalproject.resume.domain.CreateResumeRequest;
 import com.finalproject.resume.domain.CreateResumeResponse;
+import com.finalproject.resume.domain.UpdateResumeRequest;
+import com.finalproject.resume.domain.UpdateResumeResponse;
 import com.finalproject.resume.service.ResumeService;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,5 +43,13 @@ public class CvvController {
         return new ResponseEntity<>(response,HttpStatus.CREATED);
     }
 
+    @PutMapping(value = "/resume/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public ResponseEntity<UpdateResumeResponse> putOperation(
+            @RequestBody UpdateResumeRequest request, @PathVariable String id) {
+        UpdateResumeResponse response = service.updateResume(request, id);
+        log.info("PUT operation was successful", response);
+        return new ResponseEntity(response, HttpStatus.OK);
+    }
 
 }
