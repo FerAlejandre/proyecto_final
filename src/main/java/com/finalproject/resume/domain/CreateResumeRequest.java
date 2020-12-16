@@ -5,6 +5,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import java.util.List;
 
 @Getter
 @Setter
@@ -27,16 +28,13 @@ public class CreateResumeRequest {
     @ApiModelProperty(value = "Resume phoneNumber", example = "1234567890")
     private String phoneNumber;
 
-    /*
-    private Skills skills;
+    private List<Skill> skills;
+    private List<Language> languages;
+    private List<Workexperience> workexperiences;
+    private Education education;
+    private List<Challenge> challenges;
+    private SocialMedia socialMedia;
+    private Config config;
 
-    @Getter
-    @Setter
-    @ToString
-    public static class Skills{
-        private String name;
-        private Byte percentaje;
-    }
-    */
 
 }

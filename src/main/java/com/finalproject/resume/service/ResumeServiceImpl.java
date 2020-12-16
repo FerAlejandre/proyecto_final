@@ -42,6 +42,13 @@ public class ResumeServiceImpl implements ResumeService{
         resume.setCountry(request.getCountry());
         resume.setEmail(request.getEmail());
         resume.setPhoneNumber(request.getPhoneNumber());
+        resume.setSkills(request.getSkills());
+        resume.setLanguages(request.getLanguages());
+        resume.setWorkexperiences(request.getWorkexperiences());
+        resume.setEducation(request.getEducation());
+        resume.setChallenges(request.getChallenges());
+        resume.setSocialMedia(request.getSocialMedia());
+        resume.setConfig(request.getConfig());
         return resume;
     }
 
@@ -64,6 +71,13 @@ public class ResumeServiceImpl implements ResumeService{
             response.setCountry(newResume.getCountry());
             response.setEmail(newResume.getEmail());
             response.setPhoneNumber(newResume.getPhoneNumber());
+            response.setSkills(newResume.getSkills());
+            response.setLanguages(newResume.getLanguages());
+            response.setWorkexperiences(newResume.getWorkexperiences());
+            response.setEducation(newResume.getEducation());
+            response.setChallenges(newResume.getChallenges());
+            response.setSocialMedia(newResume.getSocialMedia());
+            response.setConfig(newResume.getConfig());
         }
         return response;
     }
@@ -104,6 +118,35 @@ public class ResumeServiceImpl implements ResumeService{
             saveResume.setPhoneNumber(request.getPhoneNumber());
         else if(request.getPhoneNumber() != null && request.getPhoneNumber().isEmpty())
             saveResume.setPhoneNumber(null);
+
+        if(request.getSkills() != null)
+            saveResume.setSkills(request.getSkills());
+        else if(request.getSkills() != null && request.getSkills().isEmpty())
+            saveResume.setSkills(null);
+
+        if(request.getLanguages() != null)
+            saveResume.setLanguages(request.getLanguages());
+        else if(request.getLanguages() != null && request.getLanguages().isEmpty())
+            saveResume.setLanguages(null);
+
+        if(request.getWorkexperiences() != null)
+            saveResume.setWorkexperiences(request.getWorkexperiences());
+        else if(request.getWorkexperiences() != null && request.getWorkexperiences().isEmpty())
+            saveResume.setWorkexperiences(null);
+
+        if(request.getEducation() != null)
+            saveResume.setEducation(request.getEducation());
+
+        if(request.getChallenges() != null)
+            saveResume.setChallenges(request.getChallenges());
+        else if(request.getChallenges() != null && request.getChallenges().isEmpty())
+            saveResume.setChallenges(null);
+
+        if(request.getSocialMedia() != null)
+            saveResume.setSocialMedia(request.getSocialMedia());
+
+        if(request.getConfig() != null)
+            saveResume.setConfig(request.getConfig());
 
         return saveResume;
     }

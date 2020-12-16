@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.List;
+
 @Setter
 @Getter
 @ToString
@@ -24,4 +26,12 @@ public class UpdateResumeResponse {
     private String email;
     @ApiModelProperty(value = "Resume phoneNumber", example = "1234567890")
     private String phoneNumber;
+
+    private List<Skill> skills;
+    private List<Language> languages;
+    private List<Workexperience> workexperiences;
+    private Education education;
+    private List<Challenge> challenges;
+    private SocialMedia socialMedia;
+    private Config config;
 }

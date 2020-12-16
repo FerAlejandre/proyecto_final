@@ -1,6 +1,6 @@
 package com.finalproject.resume.model;
 
-import com.finalproject.resume.domain.CreateResumeRequest;
+import com.finalproject.resume.domain.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -10,6 +10,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import java.util.List;
 
 @Getter
 @Setter
@@ -27,13 +28,20 @@ public class Resume {
     private String country;
     private String email;
     private String phoneNumber;
+    private List<Skill>skills;
+    private List<Language>languages;
+    private List<Workexperience> workexperiences;
+    private Education education;
+    private List<Challenge> challenges;
+    private SocialMedia socialMedia;
+    private Config config;
 
-    /*private CreateResumeRequest.Skills skills;
+    /*private CreateResumeRequest.Skill skills;
 
     @Getter
     @Setter
     @ToString
-    public static class Skills{
+    public static class Skill{
         private String name;
         private Byte percentaje;
     }
